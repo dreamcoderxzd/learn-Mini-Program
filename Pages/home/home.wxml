@@ -1,3 +1,18 @@
 <!--Pages/home/home.wxml-->
-<text class="title">Hello Wrold</text>
-<button></button>
+<!-- 1... 小程序的数据绑定 -->
+
+      <!-- 使用Mustache语法，拿到对应的js文件中定义的属性的值 -->
+<view>Hello {{name}}</view>
+<view>我的年龄:{{age}}</view>
+
+<!-- 2...列表展示: wx:for -->
+    <!-- 注意：
+          wx:for 循环属性时候需要加上mustache语法,然后在后面写上item.XXX  拿到属性里面的值. 
+    -->
+<view wx:for="{{students}}">{{item.name}} -- {{item.age}}</view>
+
+
+<!-- 3...事件监听，改变数据 -->
+<view>当前计数：{{counter}}</view>
+<button size="mini" bindtap="handleButtonClick">+</button>
+<button size="mini" bindtap="handleSubtraction">-</button>
